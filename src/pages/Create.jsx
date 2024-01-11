@@ -146,36 +146,30 @@ function Create() {
           ></textarea>
         </div>
         <div className="flex items-center justify-between">
-          <button className="btn btn-info">Create</button>
+          <button className="btn btn-info uppercase">Create</button>
           <button
-            className="btn btn-success"
+            className="btn btn-success uppercase"
             type="button"
-            onClick={() => document.getElementById("my_modal_4").showModal()}
+            onClick={() => document.getElementById("my_modal_2").showModal()}
           >
             preivew
           </button>
         </div>
       </form>
-      <dialog id="my_modal_4" className="modal">
-        <div className="modal-box flex w-11/12 max-w-5xl">
+      <dialog id="my_modal_2" className="modal">
+        <div className="modal-box flex flex-col items-center">
+          <h3 className="text-center text-lg font-bold uppercase">preivew</h3>
           <div className="carousel w-96 rounded-box">
             <div className="carousel-item w-1/2">
-              {images.map((img) => {
-                return <img src={img} className="w-full" />;
+              {images.map((image) => {
+                return <img src={image} className="w-full" />;
               })}
             </div>
           </div>
-          <div className="card-body">
-            <h2 className="card-title"></h2>
-            <p className="line-clamp-4"></p>
-          </div>
-          <div className="modal-action">
-            <form method="dialog">
-              {/* if there is a button, it will close the modal */}
-              <button className="btn">Close</button>
-            </form>
-          </div>
         </div>
+        <form method="dialog" className="modal-backdrop">
+          <button>close</button>
+        </form>
       </dialog>
     </div>
   );
